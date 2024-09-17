@@ -47,10 +47,7 @@ function HomeComponent() {
                 <h1> Bienvenido {username}</h1> 
                 <h2> Rol: {role}</h2> 
                 <button className = 'buttonHomeLogin'onClick={handleLogout}>Logout</button>
-                <button className = 'buttonHomeLogin'onClick={() => history.push('/RegVehiculo')}>REGISTRO VEHICULO</button>
-                <button className = 'buttonHomeLogin'onClick={() => history.push('/Parqueadero')}>PARQUEADERO</button>
-                <button className = 'buttonHomeLogin'onClick={() => history.push('/EntradaSalida')}>ENTRADA/SALIDA</button>
-                <button className = 'buttonHomeLogin'onClick={() => history.push('/Reporte')}>REPORTE</button>
+                <button className = 'buttonHomeLogin'onClick={() => history.push('/revista')}>REGISTRO REVISTA</button>
             </div>        
         </>
     );

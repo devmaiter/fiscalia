@@ -26,42 +26,32 @@ export default function Admin({ username, role, handleLogout }) { // Add role an
           <div className="container">
             <div className="card">
               <div className="image">
-                <img href= "#" src = "https://cdn-icons-png.flaticon.com/512/4544/4544666.png" />
+                <img href= "#" src = "https://cdn-icons-png.flaticon.com/512/11587/11587842.png" />
               </div>
               <div className="content">
-                <button className = 'buttonHomeLogin' onClick={() => history.push('/RegVehiculo')}>REGISTRO VEHICULO</button>
+                <button className = 'buttonHomeLogin' onClick={() => history.push('/revista')}>REALIZAR REVISTA</button>
               </div>
             </div>    
           </div>
           <div className="container">
             <div className="card">
               <div className="image">
-                <img href= "#" src = "https://cdn-icons-png.flaticon.com/512/11199/11199911.png" />
+                <img href= "#" src = "https://cdn-icons-png.flaticon.com/512/1865/1865269.png" />
               </div>
               <div className="content">
-                <button className = 'buttonHomeLogin' onClick={() => history.push('/EntradaSalida')}>ENTRADA/SALIDA</button>
+                <button className = 'buttonHomeLogin' onClick={() => history.push('/EntradaSalida')}>GUARDAR UBICACIÓN</button>
               </div>
             </div>    
           </div>
           <div className="container">
             <div className="card">
               <div className="image">
-                <img href= "#" src = "https://cdn-icons-png.flaticon.com/512/2830/2830180.png" />
+                <img href= "#" src = "	https://cdn-icons-png.flaticon.com/512/1055/1055644.png" />
               </div>
               <div className="content">
-                <button className = 'buttonHomeLogin' onClick={() => history.push('/Parqueadero')}>PARQUEADERO</button>
-              </div>
+                <button className = 'buttonHomeLogin' onClick={() => history.push('/Parqueadero')}>REPORTE ADMIN</button>
             </div>    
           </div>
-          <div className="container">
-            <div className="card">
-              <div className="image">
-                <img href= "#" src = "https://cdn-icons-png.flaticon.com/512/2329/2329087.png" />
-              </div>
-              <div className="content">
-                <button className = 'buttonHomeLogin' onClick={() => history.push('/Reporte')}> REPORTE</button>
-              </div>
-            </div>    
           </div>
         </div>
       </div>

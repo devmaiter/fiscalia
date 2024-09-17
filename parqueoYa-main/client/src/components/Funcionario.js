@@ -1,10 +1,10 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import "../App.css";
-import "./Vigilante.css";
+import "./Funcionario.css";
 import Axios from "axios";
 
-export default function Vigilante({ username, handleLogout }) {
+export default function Funcionario({ username, handleLogout }) {
   const history = useHistory();
 
   const logout = () => {
@@ -17,7 +17,7 @@ export default function Vigilante({ username, handleLogout }) {
   return (
     <div className="App">
       <div className='home__form'>
-        <h1 > Bienvenido Vigilante {username}</h1>
+        <h1 > Bienvenido {username}</h1>
         
         <div className='containerHome'> 
           <button className="logoutButton" onClick={logout}>
@@ -30,17 +30,7 @@ export default function Vigilante({ username, handleLogout }) {
                 <img href= "#" src = "https://cdn-icons-png.flaticon.com/512/4544/4544666.png" />
               </div>
               <div className="content">
-                <button className = 'buttonHomeLogin' onClick={() => history.push('/RegVehiculo')}>REGISTRO VEHICULO</button>
-              </div>
-            </div>    
-          </div>
-          <div className="container">
-            <div className="card">
-              <div className="image">
-                <img href= "#" src = "https://cdn-icons-png.flaticon.com/512/11199/11199911.png" />
-              </div>
-              <div className="content">
-                <button className = 'buttonHomeLogin' onClick={() => history.push('/EntradaSalida')}>ENTRADA/SALIDA</button>
+                <button className = 'buttonHomeLogin' onClick={() => history.push('/RegVehiculo')}> REVISTA </button>
               </div>
             </div>    
           </div>
@@ -50,7 +40,7 @@ export default function Vigilante({ username, handleLogout }) {
                 <img href= "#" src = "https://cdn-icons-png.flaticon.com/512/2830/2830180.png" />
               </div>
               <div className="content">
-                <button className = 'buttonHomeLogin' onClick={() => history.push('/Parqueadero')}>PARQUEADERO</button>
+                <button className = 'buttonHomeLogin' onClick={() => history.push('/Parqueadero')}> UBICACIÓN </button>
               </div>
             </div>    
           </div>

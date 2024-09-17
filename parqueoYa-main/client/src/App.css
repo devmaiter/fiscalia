@@ -5,13 +5,10 @@
 }
 .App {
   text-align: center;
-  background-color: #EBD9A1;
-  background-image: url('../public/car.png');
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-size: 40%; /* Ajusta el tamaño de la imagen al 50% del elemento */
-  height: 100%;
-  width: 100% ;
+  background-image: linear-gradient(to top, white, green);
+  background-repeat: repeat;
+  height: 100vh;
+  width: 100%;
   overflow-x: hidden;
 }
 p {

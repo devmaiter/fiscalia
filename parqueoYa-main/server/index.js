@@ -38,8 +38,8 @@ app.use(
 const db = mysql.createConnection({
   user: "root",
   host: "localhost",
-  password: "password",
-  database: "parking",
+  password: "",
+  database: "fiscalia",
 });
 
 app.post("/register", (req, res) => {
@@ -53,7 +53,7 @@ app.post("/register", (req, res) => {
     }
 
     db.query(
-      "INSERT INTO users (username, password, role) VALUES (?,?,?)",
+      "INSERT INTO accounts (username, password, role) VALUES (?,?,?)",
       [username, hash, role], // Include role in query
       (err, result) => {
         if (err) {
@@ -73,7 +73,7 @@ app.get("/login", (req, res) => {
     res.send({ loggedIn: false });
   }
 });
-app.get('/logout', (req, res) => {
+app.get('/logout', (req, res) => { 
   req.session.destroy(err => {
     if(err) {
       return res.send({ success: false, message: 'Could not log out, please try again' });
@@ -88,8 +88,8 @@ app.post("/login", (req, res) => {
   const password = req.body.password;
 
   db.query(
-    "SELECT * FROM users WHERE username = ?;",
-    username,
+    "SELECT * FROM accounts WHERE username = ?;",
+    [username],
     (err, result) => {
       if (err) {
         res.send({ err: err });
@@ -114,17 +114,13 @@ app.post("/login", (req, res) => {
 });
 
 
-app.post('/regVehiculo', function(request, response) {
+
+app.post('/regFechaRevista', function(request, response) {
   // Get the vehicle details from the request body
-  let cedulaPropietario = request.body.cedulaPropietario;
-  let placa = request.body.placa;
-  let tipoVehiculo = request.body.tipoVehiculo;
-  // Get the user's id from the session
-  let vigilante_id = request.session.userId;
-  // Check that all required details are present
-  if (cedulaPropietario && placa && tipoVehiculo && vigilante_id) {
+  let fechaRevista = request.body.fechaRevista;
+  if (fechaRevista) {
       // Insert the new vehicle into the database
-      db.query('INSERT INTO vehiculos (cedulaPropietario, placa, tipoVehiculo, vigilante_id) VALUES (?, ?, ?, ?)', [cedulaPropietario, placa, tipoVehiculo, vigilante_id], function(error, results, fields) {
+      db.query('INSERT INTO visitas (fechaRevista) VALUES (?)', [ fechaRevista ], function(error, results, fields) {
           if (error) throw error;
           // Check if the vehicle was registered successfully
           if (results.affectedRows > 0) {
@@ -152,7 +148,7 @@ app.get('/userId', function(req, res) {
   }
 });
 
-app.get('/getAllNumParqueadero', function(request, response) {
+app.get('/getAllNumParqueadero',   function(request, response) {
   db.query('SELECT numParqueadero, disponibilidad FROM parqueaderos', function(error, results, fields) {
       if (error) throw error;
       response.send(results);
